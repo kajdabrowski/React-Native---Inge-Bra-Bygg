@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, SafeAreaView, Text, Button } from 'react-native';
 import InputForm from '../components/InputForm';
+const s = require("../style/style");
 
 
 const LandingScreen = (props) => {
@@ -9,8 +10,8 @@ const LandingScreen = (props) => {
     }
     return (
         <SafeAreaView>
-            <View>
-                <Text>Inge Bra Bygg</Text>
+            <View style={s.container}>
+                <Text style={s.heading}>Inge Bra Bygg</Text>
                 <InputForm placeholderTop="E-mail" placeholderBottom="Password"/>
                 <Button onPress={pressHandler} title="Login" />
             </View>

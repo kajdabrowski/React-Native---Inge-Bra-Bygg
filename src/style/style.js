@@ -2,7 +2,6 @@
 import { StyleSheet } from "react-native";
 
 module.exports = StyleSheet.create({
-  alwaysgreen: {},
   container: {
     backgroundColor: "#264653",
     paddingTop: 50,

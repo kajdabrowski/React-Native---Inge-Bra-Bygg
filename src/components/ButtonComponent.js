@@ -1,18 +1,14 @@
-import React from 'react';
-import { View, Button, StyleSheet } from 'react-native'
+import React from "react";
+import { View, Button, StyleSheet } from "react-native";
 
-//Note: You can't style buttons with a normal stylesheet. 
+//Note: You can't style buttons with a normal stylesheet.
 
 const RoundedButton = (props) => {
-    return (
-        <View>
-            <Button
-                color="peachpuff"
-                title={props.title}
-            />
-        </View>
-    )
-}
+  return (
+    <View>
+      <Button color="peachpuff" title={props.title} />
+    </View>
+  );
+};
 
-
-export default RoundedButton
+export default RoundedButton;
