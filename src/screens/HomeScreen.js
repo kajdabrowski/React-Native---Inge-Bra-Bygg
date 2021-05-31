@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, SafeAreaView, Text, Button, TextInput } from 'react-native';
-const s = require("../style/style");
+import InputForm from '../components/InputForm'
+import RoundedButton from '../components/ButtonComponent'
+ 
 
 const HomeScreen = (props) => {
     const pressHandler = () => {
@@ -8,9 +10,10 @@ const HomeScreen = (props) => {
       };
     return (
         <SafeAreaView>
-            <View style={s.container}>
-                <Text>KAJ ÄR BÄST</Text>
-                <Button onPress={pressHandler} title="Go to Task" />
+            <View>
+                <Text>Welcome --UserRole --</Text>
+                <InputForm placeholderTop="Update E-mail" placeholderBottom="Change password"/>
+                <RoundedButton title="Update profile"/>
             </View>
         </SafeAreaView>
     )
