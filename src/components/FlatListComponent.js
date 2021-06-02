@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View, StyleSheet, FlatList, SafeAreaView } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 const Food = (props) => {
   return (
@@ -28,12 +29,18 @@ const styles = StyleSheet.create({
   food: {
     justifyContent: "center",
     padding: 10,
-    backgroundColor: "#2a9d8f",
+    backgroundColor: '#d1d1d1',
     marginBottom: 10,
   },
   text: {
-    color: "white",
+    color: "black",
     fontWeight: "bold",
+    
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+    padding: 10,
   },
 });
 

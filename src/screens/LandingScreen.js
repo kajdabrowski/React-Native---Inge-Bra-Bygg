@@ -1,22 +1,54 @@
-import React from 'react';
-import { View, SafeAreaView, Text, Button } from 'react-native';
-import InputForm from '../components/InputForm';
+import React, { Component, useState } from "react";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  TextInput,
+  Button,
+  TouchableOpacity,
+} from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 const s = require("../style/style");
 
+class LandingScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: "",
+    };
+  }
 
-const LandingScreen = (props) => {
-    const pressHandler = () => {
-        props.navigation.navigate('Home')
-    }
+  render() {
+    const { name } = this.state;
+    const { password } = this.state;
     return (
-        <SafeAreaView>
-            <View style={s.container}>
-                <Text style={s.heading}>Inge Bra Bygg</Text>
-                <InputForm placeholderTop="E-mail" placeholderBottom="Password"/>
-                <Button onPress={pressHandler} title="Login" />
-            </View>
-        </SafeAreaView>
-    )
+      <SafeAreaView>
+        <LinearGradient colors={["#4A148C", "#880E4F"]} style={s.container}>
+          <View>
+            <Text style={s.heading}>Inga Bra Byyg</Text>
+            <Text style={s.text}>Write Your Name</Text>
+            <TextInput
+              value={name}
+              onChangeText={(email) => this.setState({ email: email })}
+              placeholder={"E-mail"}
+              style={s.input}
+            />
+            <Text style={{ color: "blue" }}>{name}</Text>
+
+            <Text style={s.text}>Enter Your Password</Text>
+            <TextInput
+              value={password}
+              onChangeText={(password) => this.setState({ password: password })}
+              placeholder={"Password"}
+              style={s.input}
+              secureTextEntry={true}
+            />
+          </View>
+        </LinearGradient>
+      </SafeAreaView>
+    );
+  }
 }
 
 export default LandingScreen;

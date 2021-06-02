@@ -13,10 +13,21 @@ module.exports = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
     padding:10,
-    backgroundColor: "#e9c46a",
+    backgroundColor: "white",
+    textAlign:'center'
   },
   text: {
     fontWeight: "bold",
     color: "white",
+    margin: 20,
+  },
+  input: {
+    width: 250,
+    height: 44,
+    padding: 10,
+    marginTop: 20,
+    marginBottom: 10,
+    backgroundColor: "#e8e8e8",
+    margin: 20,
   },
 });

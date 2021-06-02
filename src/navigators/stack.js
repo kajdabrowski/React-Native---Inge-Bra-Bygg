@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 
 const MainStack = () => {
   return (
-    <Stack.Navigator  initialRouteName="Landing">
+    <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Landing" component={LandingScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="TaskList" component={TaskListScreen} />
@@ -18,6 +18,5 @@ const MainStack = () => {
     </Stack.Navigator>
   );
 };
-
 
 export default MainStack;
