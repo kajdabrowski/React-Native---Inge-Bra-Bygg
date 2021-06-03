@@ -30,4 +30,11 @@ module.exports = StyleSheet.create({
     backgroundColor: "#e8e8e8",
     margin: 20,
   },
+  image: {
+    height: 200,
+    width: 200,
+    padding: 10,
+    alignSelf: 'center',
+
+  }
 });

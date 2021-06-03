@@ -17,7 +17,6 @@ const MessageListScreen = (props) => {
       <View >
         <Text style={s.heading}>Here are Lists of your Messages!</Text>
         <FlatList />
-        <Button onPress={pressHandler} title="testscreen" />
       </View>
  </LinearGradient>
     </SafeAreaView>
