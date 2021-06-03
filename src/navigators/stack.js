@@ -3,6 +3,7 @@ import HomeScreen from "../screens/HomeScreen";
 import LandingScreen from "../screens/LandingScreen";
 import TaskListScreen from "../screens/TaskListScreen";
 import MessageListScreen from "../screens/MessageListScreen";
+import TestScreen from "../screens/TestScreen";
 import React from "react";
 import { StyleSheet } from "react-native";
 
@@ -15,6 +16,7 @@ const MainStack = () => {
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="TaskList" component={TaskListScreen} />
       <Stack.Screen name="MessageList" component={MessageListScreen} />
+      <Stack.Screen name="TestScreen" component={TestScreen} />
     </Stack.Navigator>
   );
 };

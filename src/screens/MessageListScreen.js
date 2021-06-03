@@ -7,6 +7,9 @@ import FlatList from "../components/FlatListComponent";
 const s = require("../style/style");
 
 const MessageListScreen = (props) => {
+  const pressHandler = () => {
+    props.navigation.navigate("TestScreen");
+  };
   return (
     <SafeAreaView>
       <LinearGradient colors={['#4A148C', '#880E4F']}
@@ -14,6 +17,7 @@ const MessageListScreen = (props) => {
       <View >
         <Text style={s.heading}>Here are Lists of your Messages!</Text>
         <FlatList />
+        <Button onPress={pressHandler} title="testscreen" />
       </View>
  </LinearGradient>
     </SafeAreaView>
