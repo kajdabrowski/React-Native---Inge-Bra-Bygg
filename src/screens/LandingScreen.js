@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import axios from 'axios'
 import {
   View,
   Text,
@@ -10,6 +11,27 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 const s = require("../style/style");
 
+
+const Login =({ navigation}) => {
+  const [hidePassword, setHidePassword] = useState(true)
+  const handleLogin = (credentials) => {
+    const url ='https'
+
+    axios
+    post(url, credentials)
+    .then((response) => {
+      const result  = response.data
+       const{message,status,data} =result
+      
+      })
+      .catch(error =>{
+        console.log(error.Json)
+      })
+
+    
+  }
+
+}
 class LandingScreen extends Component {
   constructor(props) {
     super(props);
@@ -30,6 +52,7 @@ class LandingScreen extends Component {
             <Text style={s.text}>Write Your Name</Text>
             <TextInput
               value={name}
+              icon='mail'
               onChangeText={(email) => this.setState({ email: email })}
               placeholder={"E-mail"}
               style={s.input}
@@ -40,7 +63,8 @@ class LandingScreen extends Component {
             <TextInput
               value={password}
               onChangeText={(password) => this.setState({ password: password })}
-              placeholder={"Password"}
+              placeholder={"*  *  *  *  *  *  *  *  *"}
+              placeholderTextColor='gray'
               style={s.input}
               secureTextEntry={true}
             />
