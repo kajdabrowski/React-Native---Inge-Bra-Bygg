@@ -13,7 +13,7 @@ const HomeScreen = (props) => {
     <SafeAreaView>
       <LinearGradient colors={["#4A148C", "#880E4F"]} style={s.container}>
         <View>
-          <Text style={s.heading}>Welcome --UserRole --</Text>
+          <Text style={s.heading}>Welcome!</Text>
           <InputForm
             placeholderTop="Update E-mail"
             placeholderBottom="Change password"

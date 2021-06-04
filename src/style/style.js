@@ -29,12 +29,19 @@ module.exports = StyleSheet.create({
     marginBottom: 10,
     backgroundColor: "#e8e8e8",
     margin: 20,
+    alignSelf: 'center',
   },
   image: {
     height: 200,
     width: 200,
     padding: 10,
     alignSelf: 'center',
-
-  }
+  },
+  imageSmall: {
+    height: 100,
+    width:100,
+    padding: 10,
+    alignSelf: 'center',
+  },
+ 
 });
