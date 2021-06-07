@@ -27,6 +27,29 @@ export async function userLogin(user) {
   return data;
 }
 
+export async function getUsers() {
+  var handleError = function (err) {
+    console.warn(err);
+    return new Response(
+      JSON.stringify({
+        code: 400,
+        message: "Stupid network Error",
+      })
+    );
+  };
+
+  const result = await fetch(
+    "https://jsonplaceholder.typicode.com/posts"
+  ).catch(handleError);
+  const data = await result.json();
+  return data;
+}
+
+/*fetch("http://httpstat.us/500")
+  .then(handleErrors)
+  .then(response => response.json() )
+  .catch(error => console.log(error) );*/
+
 // registers a new user and sends  to user databse
 export async function register(user) {
   let result = await fetch("http://localhost:5000/users", {
@@ -69,27 +92,26 @@ export async function createTask(Task, token = "") {
 
 //create message by both roles
 export async function createMessage(Message, token = "") {
-    let a = [];
-    Message.forEach((element) => {
-      a.push(element._id);
-    });
-    let sendMessage = {
-      timeStamp: Date.now(),
-      status: "inProcess",
-      MessageValue: 999,
-      items: a,
-    };
-  
-    let result = await fetch("http://localhost:5000/tasks/id/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify(sendMessage),
-    });
-    let y = await result.json();
-    console.log(y);
-  }
-  
+  let a = [];
+  Message.forEach((element) => {
+    a.push(element._id);
+  });
+  let sendMessage = {
+    timeStamp: Date.now(),
+    status: "inProcess",
+    MessageValue: 999,
+    items: a,
+  };
+
+  let result = await fetch("http://localhost:5000/tasks/id/messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: token,
+    },
+    body: JSON.stringify(sendMessage),
+  });
+  let y = await result.json();
+  console.log(y);
+}

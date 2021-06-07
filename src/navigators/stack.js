@@ -14,9 +14,9 @@ const MainStack = () => {
   return (
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Landing" component={LandingScreen} />
-      <Stack.Screen name="Home" component={drawer} /> 
+      <Stack.Screen name="Home" component={drawer} />
       <Stack.Screen name="TaskList" component={TaskListScreen} />
-      <Stack.Screen name="MessageList" component={MessageListScreen} />
+      <Stack.Screen name="TestScreen" component={TestScreen} />
     </Stack.Navigator>
   );
 };
