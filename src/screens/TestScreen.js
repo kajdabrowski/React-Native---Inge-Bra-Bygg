@@ -4,8 +4,11 @@ import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
 import { ThemeProvider } from "../store/MyProvider";
 import { getUsers } from "../api/user";
 
-const TestScreen = () => {
+const TestScreen = (props) => {
   const [users, setUsers] = useState([]);
+  const pressHandler = () => {
+    props.navigation.navigate("Login");
+  };
   const handleUsers = useCallback(async () => {
     const response = await fetch(
       "https://mocki.io/v1/07e78fd4-2587-4480-8e84-efab14a153de"
@@ -32,6 +35,7 @@ const TestScreen = () => {
             )}
           </Text>
         </View>
+        <Button onPress={pressHandler} title="Go to LOgin" />
       </View>
     </SafeAreaView>
   );
