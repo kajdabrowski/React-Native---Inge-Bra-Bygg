@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
 import { ThemeProvider } from "../store/MyProvider";
 import { getUsers } from "../api/user";
 
+<<<<<<< HEAD
 const TestScreen = () => {
   // const [users, setUsers] = useState([]);
   // const handleUsers = useCallback(async () => {
@@ -25,6 +26,14 @@ const TestScreen = () => {
 
  const [items, setItems] = useState([]);
   const handleItems = useCallback(async () => {
+=======
+const TestScreen = (props) => {
+  const [users, setUsers] = useState([]);
+  const pressHandler = () => {
+    props.navigation.navigate("Login");
+  };
+  const handleUsers = useCallback(async () => {
+>>>>>>> 80400df59451c08c65440f41fefe076dbe2d0206
     const response = await fetch(
       "https://swapi.dev/api/people/1"
     );
@@ -59,6 +68,7 @@ const TestScreen = () => {
             )}
           </Text> */}
         </View>
+        <Button onPress={pressHandler} title="Go to LOgin" />
       </View>
     </SafeAreaView>
   );

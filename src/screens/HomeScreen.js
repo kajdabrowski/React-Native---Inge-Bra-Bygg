@@ -9,6 +9,8 @@ const HomeScreen = (props) => {
   const pressHandler = () => {
     props.navigation.navigate("TaskList");
   };
+
+  
   return (
     <SafeAreaView>
       <LinearGradient colors={["#4A148C", "#880E4F"]} style={s.container}>
