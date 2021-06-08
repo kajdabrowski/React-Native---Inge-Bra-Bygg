@@ -20,6 +20,7 @@ export async function userLogin(user) {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
+      headers: {Bearer : token}
     },
     body: JSON.stringify(user),
   });
