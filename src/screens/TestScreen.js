@@ -1,8 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import ContextComponent from "../store/MyConsumer";
-import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
-import { ThemeProvider } from "../store/MyProvider";
-import { getUsers } from "../api/user";
+
 
 const TestScreen = (props) => {
   const [users, setUsers] = useState([]);
