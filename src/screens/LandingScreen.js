@@ -12,26 +12,7 @@ import { LinearGradient } from "expo-linear-gradient";
 const s = require("../style/style");
 
 
-const Login =({ navigation}) => {
-  const [hidePassword, setHidePassword] = useState(true)
-  const handleLogin = (credentials) => {
-    const url ='https'
 
-    axios
-    post(url, credentials)
-    .then((response) => {
-      const result  = response.data
-       const{message,status,data} =result
-      
-      })
-      .catch(error =>{
-        console.log(error.Json)
-      })
-
-    
-  }
-
-}
 class LandingScreen extends Component {
   constructor(props) {
     super(props);

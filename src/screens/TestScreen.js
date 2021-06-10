@@ -4,36 +4,12 @@ import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
 import { ThemeProvider } from "../store/MyProvider";
 import { getUsers } from "../api/user";
 
-<<<<<<< HEAD
-const TestScreen = () => {
-  // const [users, setUsers] = useState([]);
-  // const handleUsers = useCallback(async () => {
-  //   const response = await fetch(
-  //     "https://mocki.io/v1/07e78fd4-2587-4480-8e84-efab14a153de"
-  //   );
-  //   if (response.ok) {
-  //     const users = await response.json();
-  //     console.log("***users:", users);
-  //     console.log("***users[0]:", users["users"]);
-  //     setUsers(users["users"]);
-  //   } else {
-  //     console.log("Response not ok");
-  //   }
-  // }, []);
-  // useEffect(() => {
-  //   handleUsers();
-  // }, []);
-
- const [items, setItems] = useState([]);
-  const handleItems = useCallback(async () => {
-=======
 const TestScreen = (props) => {
   const [users, setUsers] = useState([]);
   const pressHandler = () => {
     props.navigation.navigate("Login");
   };
   const handleUsers = useCallback(async () => {
->>>>>>> 80400df59451c08c65440f41fefe076dbe2d0206
     const response = await fetch(
       "https://swapi.dev/api/people/1"
     );
