@@ -2,7 +2,7 @@ async function signIn(credentials) {
   console.log("*** In authService.js signIn. Credentials: ", credentials);
   let authData = {};
 
-  await fetch("http://192.168.1.204:5000/authenticate", {
+  await fetch("http://90.227.149.201:5000/authenticate", {
     method: "POST",
     headers: {
       Accept: "application/json",
