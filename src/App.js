@@ -12,7 +12,7 @@ export default function App() {
     <AuthProvider>
       <NavigationContainer color={"#a4ac86"}>
         {authData?.token ? (
-          authData?.role === "worker" ? (
+          authData?.role == "worker" ? (
             <WorkerStack />
           ) : (
             <ClientStack />
@@ -20,6 +20,7 @@ export default function App() {
         ) : (
           <AuthStack />
         )}
+
       </NavigationContainer>
     </AuthProvider>
   );
