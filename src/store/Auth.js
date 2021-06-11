@@ -6,9 +6,9 @@
  *          - yes: then return 200 or sth that shows that the
  *          - no: return 401
  * - if 200
- *  - render myPage
+ *  - render myscreen
  * - if 401
- *  - render the same login page with error message on the component
+ *  - render the same signin page with error message on the component
  */
 
 import React, { createContext, useState, useContext, useEffect } from "react";
