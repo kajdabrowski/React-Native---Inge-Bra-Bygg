@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 const s = require("../style/style");
 import { useAuth } from "../store/Auth";
 
-const SignInScreen = () => {
+const SignInScreen = (props) => {
   console.log("*** in SignInScreen");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,6 +13,7 @@ const SignInScreen = () => {
     const credentials = { email: email?.email, password: password?.password };
     console.log("*** SignInScreen credentials: ", credentials);
     await auth.signIn(credentials);
+    props.navigation.navigate('Home')
   };
 
   return (
