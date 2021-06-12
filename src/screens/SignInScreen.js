@@ -20,7 +20,7 @@ const SignInScreen = (props) => {
     <SafeAreaView>
       <LinearGradient colors={["#4A148C", "#880E4F"]} style={s.container}>
         <View>
-          <Text style={s.heading}>Inga Bra Byyg</Text>
+          <Text style={s.heading}>Inge Bra Bygg</Text>
           <Text style={s.text}>Write Your email</Text>
           <TextInput
             value={email}
@@ -39,7 +39,11 @@ const SignInScreen = (props) => {
             style={s.input}
             secureTextEntry={true}
           />
+<<<<<<< HEAD
+          <Button onPress={signIn} title="Sign in" />
+=======
           <Button onPress={signIn} title="Sign In" />
+>>>>>>> 4c85b4406637afde27864398149a9ae2c1845aa1
         </View>
       </LinearGradient>
     </SafeAreaView>

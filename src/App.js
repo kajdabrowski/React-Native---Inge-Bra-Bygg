@@ -8,6 +8,13 @@ import { AuthProvider, useAuth } from "./store/Auth";
 export default function App() {
   const { authData, loading } = useAuth();
   console.log("*** In App - authData", authData);
+
+  const CurrentStack = authData?.role === "worker" ? (
+    <WorkerStack />
+  ) : (
+    <ClientStack />
+  );
+
   return (
     <AuthProvider>
       <NavigationContainer color={"#a4ac86"}>
