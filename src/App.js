@@ -9,11 +9,18 @@ import { AuthProvider, useAuth } from "./store/Auth";
 export default function App() {
   const { authData, loading } = useAuth();
   console.log("*** In App - authData", authData);
+
+  const CurrentStack = authData?.role === "worker" ? (
+    <WorkerStack />
+  ) : (
+    <ClientStack />
+  );
+
   return (
     <AuthProvider >
       <NavigationContainer >
         {authData?.token ? (
-          authData?.role === "worker" ? (
+          authData?.role == "worker" ? (
             <WorkerStack />
           ) : (
             <ClientStack />
@@ -21,6 +28,7 @@ export default function App() {
         ) : (
           <AuthStack />
         )}
+
       </NavigationContainer>
     </AuthProvider>
 

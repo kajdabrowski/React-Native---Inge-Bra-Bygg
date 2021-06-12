@@ -2,7 +2,11 @@ async function signIn(credentials) {
   console.log("*** In authService.js signIn. Credentials: ", credentials);
   let authData = {};
 
+<<<<<<< HEAD
   await fetch("http://192.168.1.204:5000/authenticate", {
+=======
+  await fetch("http://192.168.0.13:5000/authenticate", {
+>>>>>>> 926fb08043e7890eae0e80799a8bb9ee31e433ba
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -32,4 +36,27 @@ async function signIn(credentials) {
   return authData;
 }
 
-export const authService = { signIn };
+
+//Testing with tasks
+
+async function getClientTask() {
+  const req = await fetch("http://90.227.149.201:5000/tasks");
+  const data = await req.json();
+  console.log(data);
+  return data;
+}
+
+// få functionen getclienttasks att visas i terminalen.
+// koppla getclienttask till knappen i taskscreen
+// eventuellt id ?
+// i tasklist screen kunna lista alla tasks med presshandle knapp
+
+/*1 - Api, i authService, fetcha från backenden och koppla funktionerna. Logga resultatet från funktionen till terminalen.
+  2 - Store, i Auth.js, skapa en taskContext för state/data som alla taskfunktioner kommer använda sig av. 
+  3 - Screens, alla de screens som kommer konsumera tasks. Här kan vi koppla getclienttask till knappen i taskscreen som test. 
+  4 -  i tasklist screen kunna lista alla tasks med presshandle knapp
+*/
+
+
+
+export const authService = { signIn, getClientTask };

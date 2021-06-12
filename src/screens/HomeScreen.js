@@ -5,6 +5,9 @@ import RoundedButton from "../components/ButtonComponent";
 const s = require("../style/style");
 import { LinearGradient } from "expo-linear-gradient";
 
+
+
+
 const HomeScreen = (props) => {
   const pressHandler = () => {
     props.navigation.navigate("TaskListScreen");
