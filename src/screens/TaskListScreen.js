@@ -14,7 +14,7 @@ const TaskListScreen = (props) => {
         <View>
           <Text style={s.heading}>Here are Lists of your previous Tasks</Text>
           <FlatList />
-          <Button onPress={pressHandler} title="Go to Testscreen" />
+          <Button onPress={pressHandler} title="List Tasks" />
         </View>
       </LinearGradient>
     </SafeAreaView>

@@ -19,10 +19,15 @@ export default function App() {
     <AuthProvider>
       <NavigationContainer color={"#a4ac86"}>
         {authData?.token ? (
-          CurrentStack
-        ): (
-            <AuthStack />
+          authData?.role == "worker" ? (
+            <WorkerStack />
+          ) : (
+            <ClientStack />
+          )
+        ) : (
+          <AuthStack />
         )}
+
       </NavigationContainer>
     </AuthProvider>
   );
