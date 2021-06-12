@@ -3,6 +3,15 @@ import { StyleSheet, SafeAreaView, View, Text, Button, Image } from "react-nativ
 import ImageComponent from "../components/ImageComponent" 
 import {getClientTask} from "../api/authService"
 export default function TestScreen(){
+
+
+
+
+
+
+
+
+  
   return(
 
     <SafeAreaView>

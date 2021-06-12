@@ -32,7 +32,7 @@ async function signIn(credentials) {
   return authData;
 }
 
-   function getClientTask() {
+  async function getClientTask() {
     console.log("heyyyyy")
   // const req = await fetch("http://90.227.149.201:5000/tasks");
   // const data = await req.json();
