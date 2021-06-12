@@ -1,5 +1,6 @@
 import React from "react";
 import SignInScreen from "../screens/SignInScreen";
+import TestScreen from "../screens/TestScreen";
 
 import { createStackNavigator } from "@react-navigation/stack";
 
