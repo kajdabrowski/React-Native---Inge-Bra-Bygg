@@ -1,12 +1,14 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { StyleSheet, SafeAreaView, View, Text, Button, Image } from "react-native";
 import ImageComponent from "../components/ImageComponent" 
-
+import {getClientTask} from "../api/authService"
 export default function TestScreen(){
   return(
 
     <SafeAreaView>
       <ImageComponent/>
+      <Button title="task" onPress={getClientTask}/>
+
     </SafeAreaView>
 
   )
