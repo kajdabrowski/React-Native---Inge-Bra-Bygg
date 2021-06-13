@@ -1,0 +1,86 @@
+"use strict";
+import { StyleSheet } from "react-native";
+
+const utils = {
+  colors: {primaryColor: '#af0e66'},
+  dimensions: {defaultPadding: 12},
+  fonts: {largeFontSize: 18, mediumFontSize: 16, smallFontSize: 12},
+};
+module.exports = StyleSheet.create({
+  container: {
+    flex: 1,
+    margin: 20,
+    alignItems: 'center',
+    alignContent: 'center',
+    paddingVertical: 60,
+    height:'100%',
+  },
+  heading: {
+    fontSize: utils.fonts.largeFontSize,
+    fontWeight: "bold",
+    marginBottom: 10,
+    padding:10,
+    borderRadius: 6,
+    backgroundColor: "#dad1e1",
+    textAlign:'center'
+  },
+  text: {
+    fontSize: utils.fonts.smallFontSize,
+    fontWeight: "bold",
+    color: "#0e0515",
+    margin: 20,
+    alignItems: 'center',
+  },
+  input: {
+    height: 50,
+    padding: 12,
+    backgroundColor: '#dad1e1',
+    borderRadius: 6,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+   
+  },
+  loginButtonText: {
+    color: utils.colors.primaryColor,
+    fontSize: utils.fonts.mediumFontSize,
+    fontWeight: 'bold',
+  },
+  loginButton: {
+    backgroundColor:'#0e0515',
+    borderWidth: 2,
+    padding: utils.dimensions.defaultPadding,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 6,
+  },
+  image: {
+    height: 200,
+    width: 370,
+    padding: 10,
+    alignSelf: 'center',
+    resizeMode: 'stretch',
+   justifyContent:'center' ,
+   
+  },
+  imageSmall: {
+    height: 100,
+    width:100,
+    padding: 10,
+    alignSelf: 'center',
+  },
+ const BasicType = () => ( 
+  <Text style={styles.headline}> 
+    Welcome to <Text style={styles.bold}>React</Text> Native {'\n'} 
+    <Text style={styles.subheader}>This is <Text style={styles.bold}>so cool!</Text></Text> 
+  </Text> 
+); 
+ 
+const styles = StyleSheet.create({ 
+  headline...
+ 
+});
