@@ -1,4 +1,5 @@
 import React from "react";
+import { StyleSheet, Text, SafeAreaView, ScrollView, StatusBar } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import WorkerStack from "./navigators/WorkerStack";
 import ClientStack from "./navigators/ClientStack";
@@ -16,8 +17,8 @@ export default function App() {
   );
 
   return (
-    <AuthProvider>
-      <NavigationContainer color={"#a4ac86"}>
+    <AuthProvider >
+      <NavigationContainer >
         {authData?.token ? (
           authData?.role == "worker" ? (
             <WorkerStack />
@@ -30,5 +31,7 @@ export default function App() {
 
       </NavigationContainer>
     </AuthProvider>
+
   );
+  
 }

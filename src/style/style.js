@@ -6,6 +6,7 @@ module.exports = StyleSheet.create({
     backgroundColor: "#264653",
     paddingTop: 50,
     paddingHorizontal: 10,
+    borderRadius: 6,
     height:800,
   },
   heading: {
@@ -13,8 +14,18 @@ module.exports = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
     padding:10,
-    backgroundColor: "white",
-    textAlign:'center'
+    backgroundColor: "#0e0515",
+    borderRadius: 6,
+    textAlign:'center',
+
+  },
+  textHeader:{
+    fontWeight: 'bold',
+    alignSelf:'center',
+    fontSize:27,
+    marginTop: 20,
+    marginBottom: 10,
+    padding: 10,
   },
   text: {
     fontWeight: "bold",
@@ -27,21 +38,28 @@ module.exports = StyleSheet.create({
     padding: 10,
     marginTop: 20,
     marginBottom: 10,
-    backgroundColor: "#e8e8e8",
+    backgroundColor: "#dad1e1",
+    borderRadius: 6,
     margin: 20,
     alignSelf: 'center',
   },
   image: {
     height: 200,
-    width: 200,
+    width: 370,
     padding: 10,
     alignSelf: 'center',
+    resizeMode: 'stretch',
+   justifyContent:'center' ,
   },
-  imageSmall: {
-    height: 100,
-    width:100,
-    padding: 10,
+  loginButton: {
+    backgroundColor:'#0e0515',
+    borderWidth: 2,
+    borderRadius: 6,
+    width:200,
+    marginTop: 20,
+    marginBottom: 10,
     alignSelf: 'center',
   },
+  
  
 });
