@@ -2,7 +2,7 @@ async function signIn(credentials) {
   console.log("*** In authService.js signIn. Credentials: ", credentials);
   let authData = {};
 
-  await fetch("http://192.168.1.204:5000/authenticate", {
+  await fetch("http://90.227.149.201/authenticate", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -35,12 +35,37 @@ async function signIn(credentials) {
 
 //Testing with tasks
 
-async function getClientTask() {
-  const req = await fetch("http://90.227.149.201:5000/tasks");
+
+export async function getClientTask() {
+  const req = await fetch("http://localhost:5000/tasks");
   const data = await req.json();
-  console.log(data);
+  console.log(data)
   return data;
 }
+
+// async function getTaskById() {
+//   let taskData = {}
+//   await fetch("http://90.227.149.201:5000/tasks",{
+//     method: "GET",
+//     headers: {
+//       Accept: "application/json",
+//       "Content-Type": "application/json",
+//       Authorization: "Bearer"
+//     },
+
+    
+
+//   })
+
+//   .then((response)=>{
+//     console.log(response.status)
+//   })
+
+//   // const req = await fetch("http://90.227.149.201:5000/tasks");
+//   // const data = await req.json();
+//   // console.log(data);
+//   return data;
+// }
 
 // få functionen getclienttasks att visas i terminalen.
 // koppla getclienttask till knappen i taskscreen
