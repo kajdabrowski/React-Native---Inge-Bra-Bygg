@@ -39,11 +39,8 @@ const SignInScreen = (props) => {
             style={s.input}
             secureTextEntry={true}
           />
-<<<<<<< HEAD
-          <Button onPress={signIn} title="Sign in" />
-=======
+          
           <Button onPress={signIn} title="Sign In" />
->>>>>>> 4c85b4406637afde27864398149a9ae2c1845aa1
         </View>
       </LinearGradient>
     </SafeAreaView>
