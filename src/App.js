@@ -10,11 +10,11 @@ export default function App() {
   const { authData, loading } = useAuth();
   console.log("*** In App - authData", authData);
 
-  const CurrentStack = authData?.role === "worker" ? (
-    <WorkerStack />
-  ) : (
-    <ClientStack />
-  );
+  // const CurrentStack = authData?.role === "worker" ? (
+  //   <WorkerStack />
+  // ) : (
+  //   <ClientStack />
+  // );
 
   return (
     <AuthProvider >

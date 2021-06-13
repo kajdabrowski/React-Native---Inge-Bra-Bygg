@@ -2,7 +2,7 @@ async function signIn(credentials) {
   console.log("*** In authService.js signIn. Credentials: ", credentials);
   let authData = {};
 
-  await fetch("http://90.227.149.201/authenticate", {
+  await fetch("http://90.227.149.201:5000/authenticate", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -37,10 +37,32 @@ async function signIn(credentials) {
 
 
 export async function getClientTask() {
-  const req = await fetch("http://localhost:5000/tasks");
-  const data = await req.json();
-  console.log(data)
-  return data;
+  console.log("heyyyyyyyyy");
+  const taskData = {}
+  try {
+
+    const req = await fetch("http://90.227.149.201:5000/tasks/1", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IldvciBLZXIiLCJlbWFpbCI6IndvcmtlckB3b3JrZXIuY29tIiwicm9sZSI6IndvcmtlciIsImlhdCI6MTYyMzU4OTk4OX0.5yBGuoRGAOEM3M85R0aLOsLNAwBojyDkI5ziSHgggLY"
+
+    }
+
+    });
+    const data = await req.text();
+    console.log(data)
+    // .then((response) => {
+    //   console.log(response.status)
+    // })
+    .then((returnedResponse) => {
+      taskData = returnedResponse
+    })
+  }catch(error){
+    console.log(error)
+  }
+  return taskData;
 }
 
 // async function getTaskById() {
