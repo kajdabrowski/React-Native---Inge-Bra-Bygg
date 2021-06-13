@@ -28,7 +28,7 @@ const SignInScreen = (props) => {
   };
 
   return (
-<<<<<<< HEAD
+
     <SafeAreaView>
       <LinearGradient colors={["#4A148C", "#880E4F"]} style={s.container}>
         <View>
@@ -57,7 +57,7 @@ const SignInScreen = (props) => {
     </SafeAreaView>
   );
 };
-=======
+
     <LinearGradient colors={["#4A148C", "#880E4F"]} style={s.container}>
       <SafeAreaView>
         <KeyboardAwareScrollView>
@@ -95,10 +95,6 @@ const SignInScreen = (props) => {
         </KeyboardAwareScrollView>
       </SafeAreaView>
     </LinearGradient>
-    )
-
     
-}
->>>>>>> 55ebe6af939be6c2f7d30d24674be2e5ecbd4b2d
 
 export default SignInScreen;
