@@ -32,14 +32,6 @@ async function signIn(credentials) {
   return authData;
 }
 
-<<<<<<< HEAD
-  async function getClientTask() {
-    console.log("heyyyyy")
-  // const req = await fetch("http://90.227.149.201:5000/tasks");
-  // const data = await req.json();
-  // console.log(data);
-  // return data;
-=======
 
 //Testing with tasks
 
@@ -48,7 +40,6 @@ async function getClientTask() {
   const data = await req.json();
   console.log(data);
   return data;
->>>>>>> 926fb08043e7890eae0e80799a8bb9ee31e433ba
 }
 
 // få functionen getclienttasks att visas i terminalen.
