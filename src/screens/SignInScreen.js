@@ -28,36 +28,6 @@ const SignInScreen = (props) => {
   };
 
   return (
-
-    <SafeAreaView>
-      <LinearGradient colors={["#4A148C", "#880E4F"]} style={s.container}>
-        <View>
-          <Text style={s.heading}>Inge Bra Bygg</Text>
-          <Text style={s.text}>Write Your email</Text>
-          <TextInput
-            value={email}
-            icon="mail"
-            onChangeText={(email) => setEmail({ email })}
-            placeholder={"E-mail"}
-            style={s.input}
-          />
-
-          <Text style={s.text}>Enter Your Password</Text>
-          <TextInput
-            value={password}
-            onChangeText={(password) => setPassword({ password })}
-            placeholder={"*  *  *  *  *  *  *  *  *"}
-            placeholderTextColor="gray"
-            style={s.input}
-            secureTextEntry={true}
-          />
-          <Button onPress={signIn} title="Sign In" />
-        </View>
-      </LinearGradient>
-    </SafeAreaView>
-  );
-};
-
     <LinearGradient colors={["#4A148C", "#880E4F"]} style={s.container}>
       <SafeAreaView>
         <KeyboardAwareScrollView>
@@ -95,9 +65,9 @@ const SignInScreen = (props) => {
         </KeyboardAwareScrollView>
       </SafeAreaView>
     </LinearGradient>
-    
+    )
 
     
-
+}
 
 export default SignInScreen;
