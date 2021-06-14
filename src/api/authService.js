@@ -4,7 +4,7 @@ var authData = {};
 async function signIn(credentials) {
   console.log("*** In authService.js signIn. Credentials: ", credentials);
 
-  await fetch("http://90.227.149.201:5000/authenticate", {
+  await fetch("http://192.168.0.13:5000/authenticate", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -39,7 +39,7 @@ async function signIn(credentials) {
 export async function getClientTask() {
   const taskData = {};
   try {
-    const req = await fetch("http://90.227.149.201:5000/tasks", {
+    const req = await fetch("http://192.168.0.13:5000/tasks", {
       method: "GET",
       headers: {
         Accept: "application/json",
