@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet, FlatList, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-
+import Tasks from "../store/taskContext"
 const Food = (props) => {
   return (
     <View style={styles.food}>
@@ -10,16 +10,16 @@ const Food = (props) => {
   );
 };
 
-const FOODS = ["Apples", "Broccoli", "Cookies", "Doritos", "Eclairs"];
+
 
 const App = () => {
   return (
     <SafeAreaView>
       <FlatList
         style={{ padding: 20 }}
-        data={FOODS}
+        data={tasks}
         keyExtractor={(item) => item}
-        renderItem={({ item }) => <Food name={item} />}
+        renderItem={({ item }) => <Tasks name={item} />}
       />
     </SafeAreaView>
   );
