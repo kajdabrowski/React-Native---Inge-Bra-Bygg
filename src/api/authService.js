@@ -39,7 +39,7 @@ async function signIn(credentials) {
 export async function getClientTask() {
   const taskData = {};
   try {
-    const req = await fetch("http://192.168.0.13:5000/tasks", {
+    const req = await fetch("http://90.227.149.201:5000/alltasks/:page", {
       method: "GET",
       headers: {
         Accept: "application/json",
