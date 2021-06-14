@@ -33,11 +33,11 @@ const SignInScreen = (props) => {
         <KeyboardAwareScrollView>
           <View>
             <Text style={s.textHeader}>Inga Bra Byyg</Text>
-            <Image
+            {/* <Image
               blurRadius={2}
               style={s.image}
               source={require("../assets/construction-site-1-2.jpg")}
-            />
+            /> */}
 
             <Text style={s.text}>Write Your email</Text>
 

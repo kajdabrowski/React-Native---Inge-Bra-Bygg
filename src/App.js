@@ -5,19 +5,22 @@ import WorkerStack from "./navigators/WorkerStack";
 import ClientStack from "./navigators/ClientStack";
 import AuthStack from "./navigators/AuthStack";
 import { AuthProvider, useAuth } from "./store/Auth";
+import { TaskProvider, useTask } from "./store/taskContext";
 
 export default function App() {
   const { authData, loading } = useAuth();
   console.log("*** In App - authData", authData);
 
-  const CurrentStack = authData?.role === "worker" ? (
-    <WorkerStack />
-  ) : (
-    <ClientStack />
-  );
+  // const CurrentStack = authData?.role === "worker" ? (
+  //   <WorkerStack />
+  // ) : (
+  //   <ClientStack />
+  // );
 
   return (
     <AuthProvider >
+      <TaskProvider>
+
       <NavigationContainer >
         {authData?.token ? (
           authData?.role == "worker" ? (
@@ -30,6 +33,7 @@ export default function App() {
         )}
 
       </NavigationContainer>
+      </TaskProvider>
     </AuthProvider>
 
   );
