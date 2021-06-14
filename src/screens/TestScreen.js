@@ -6,14 +6,13 @@ import {
   View,
   Text,
   Button,
-  Image,
 } from "react-native";
 import ImageComponent from "../components/ImageComponent";
 import { getClientTask } from "../api/authService";
 import { useTask, TaskProvider, TaskContext } from "../store/taskContext";
 export default function TestScreen() {
 
-  const tasks = useTask()
+  const tasks = getClientTask()
 
   const Tasks = (props) => {
     return (
@@ -25,6 +24,7 @@ export default function TestScreen() {
 
   return (
     <SafeAreaView>
+  
       <FlatList
         data={tasks}
         keyExtractor={(item) => item}
