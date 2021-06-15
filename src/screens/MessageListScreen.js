@@ -2,26 +2,35 @@ import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { View, SafeAreaView, Text, Button, StyleSheet } from "react-native";
 import FlatList from "../components/FlatListComponent";
-
+import { getMessage } from "../api/authService";
 
 const s = require("../style/style");
 
-const MessageListScreen = (props) => {
-  const pressHandler = () => {
-    props.navigation.navigate("TestScreen");
-  };
+export default function MessageListScreen() {
+ 
+
+  
+  
   return (
     <SafeAreaView>
       <LinearGradient colors={['#4A148C', '#880E4F']}
           style={s.container}>
       <View >
-        <Text style={s.heading}>Here are Lists of your Messages!</Text>
+        <Text style={s.text}>Here are Lists of your Messages!</Text>
         <FlatList />
+        <Button title="Press me" onPress={getMessage}></Button>
       </View>
- </LinearGradient>
+  </LinearGradient>
     </SafeAreaView>
   );
-};
+}
 
 
-export default MessageListScreen;
+// const MessageListScreen = (props) => {
+//   const pressHandler = () => {
+//     props.navigation.navigate("TestScreen");
+//   };
+// };
+
+
+

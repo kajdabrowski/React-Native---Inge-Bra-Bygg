@@ -5,37 +5,59 @@ import {
   SafeAreaView,
   View,
   Text,
-  Button,
 } from "react-native";
-import ImageComponent from "../components/ImageComponent";
+
+
+
+
 import { getClientTask } from "../api/authService";
-import { useTask, TaskProvider, TaskContext } from "../store/taskContext";
+
+
 export default function TestScreen() {
 
-  const tasks = getClientTask()
+  
+  const [tasks, setTasks] = useState([]);
 
-  const Tasks = (props) => {
+  useEffect(() => {
+    const initTasks = async () => {
+      const res = await getClientTask();
+      console.log(res);
+      setTasks([...res.task]);
+    };
+    initTasks();
+  }, []);
+
+
+
+  const Item = ({ title, done }) => {
     return (
       <View style={styles.tasks}>
-        <Text style={styles.text}>{props.data}</Text>
+        <Text style={styles.text}>{title}</Text>
+        <Text style={styles.text}>{done}</Text>
       </View>
     );
   };
 
+
+
+  const renderItem = ({ item }) => (
+    <Item title={item.title} done={"Done: " + item.done} />
+  );
+
+
+
   return (
-    <SafeAreaView>
-  
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={tasks}
-        keyExtractor={(item) => item}
-        renderItems={({ item }) => <Tasks data={item} />}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
       />
-
-      <ImageComponent />
-      <Button title="task" onPress={getClientTask} />
     </SafeAreaView>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -57,5 +79,6 @@ const styles = StyleSheet.create({
   text: {
     color: "black",
     fontWeight: "bold",
+    textAlign: "center",
   },
 });
