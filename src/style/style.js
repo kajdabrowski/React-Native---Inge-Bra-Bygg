@@ -4,9 +4,9 @@ import { StyleSheet } from "react-native";
 module.exports = StyleSheet.create({
   container: {
     backgroundColor: "#264653",
-    paddingTop: 50,
-    paddingHorizontal: 10,
-    borderRadius: 6,
+    // paddingTop: 50,
+    // paddingHorizontal: 10,
+    // borderRadius: 6,
     height:800,
   },
   heading: {
@@ -60,6 +60,11 @@ module.exports = StyleSheet.create({
     marginBottom: 10,
     alignSelf: 'center',
   },
-  
+  listItems: {
+    justifyContent: "center",
+    padding: 10,
+    
+    marginBottom: 10,
+  },
  
 });

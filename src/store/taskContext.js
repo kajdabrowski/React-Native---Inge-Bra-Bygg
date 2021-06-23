@@ -18,7 +18,7 @@ const TaskProvider = ({ children }) => {
       }
     }
     getTasks();
-  });
+  },[]);
 
   return (
     <TaskContext.Provider value={{ taskData }}>
