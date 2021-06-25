@@ -5,8 +5,9 @@ import {
   View, 
   SafeAreaView, 
   Text, 
-  Button
 } from "react-native";
+import Swipeable from "react-native-gesture-handler/Swipeable"
+
 
 
 import { getMessage } from "../api/authService";
@@ -26,14 +27,33 @@ export default function MessageListScreen() {
     initMessages()
   },[])
 
+  const LeftActions = () => {
 
-  const Item = ({title, content}) => {
     return(
+      <View style={styles.rightAction}>
+        <Text style={styles.actionText}>Delete Message</Text>
+      </View>
+    )
+  }
+
+  
+
+  const Item = ({title, content, onSwipe, onRightPress}) => {
+    return(
+      <Swipeable 
+      renderLeftActions={LeftActions}
+      >
+     
+
       <View>
+
         <Text style={styles.text}>{title}</Text>
         <Text style={styles.text}>{content}</Text>
 
       </View>
+
+
+      </Swipeable>
 
 
     )
@@ -53,7 +73,7 @@ export default function MessageListScreen() {
     <SafeAreaView style={styles.container}>
       <LinearGradient colors={["#4A148C", "#880E4F"]} style={styles.container}>
         <View>
-          <Text style={styles.text}>Here are your Messages!</Text>
+          <Text style={styles.text}>Here are your Messages !</Text>
           <FlatList
           data={messages}
           renderItem={renderMessages}

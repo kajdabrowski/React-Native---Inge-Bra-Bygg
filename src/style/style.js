@@ -2,6 +2,27 @@
 import { StyleSheet } from "react-native";
 
 module.exports = StyleSheet.create({
+
+
+  //swipeable style
+
+  rightAction: {
+    backgroundColor: "#ff0000",
+    justifyContent: "center",
+    flex: 1
+  },
+
+  actionText: {
+    color: "#fff",
+    fontWeight:"600",
+    padding: 20
+  },
+
+
+
+
+
+
   container: {
     backgroundColor: "#264653",
     // paddingTop: 50,
