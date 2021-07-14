@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   View,
   Text,
@@ -10,7 +10,7 @@ import {
 } from "react-native";
 
 const s = require("../style/style");
-import { useAuth } from "../store/Auth";
+import authContext, { useAuth } from "../store/Auth";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -18,11 +18,11 @@ const SignInScreen = (props) => {
   console.log("*** in SignInScreen");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const auth = useAuth();
+  const auth = useContext(authContext);
   const signIn = async () => {
     const credentials = { email: email?.email, password: password?.password };
     console.log("*** SignInScreen credentials: ", credentials);
-    await auth.signIn(credentials); // You'll get either succesful data or fail
+    await auth.signIn(credentials);
 
     props.navigation.navigate("Home");
   };
@@ -33,11 +33,6 @@ const SignInScreen = (props) => {
         <KeyboardAwareScrollView>
           <View>
             <Text style={s.textHeader}>Inga Bra Byyg</Text>
-            {/* <Image
-              blurRadius={2}
-              style={s.image}
-              source={require("../assets/construction-site-1-2.jpg")}
-            /> */}
 
             <Text style={s.text}>Write Your email</Text>
 
@@ -65,9 +60,7 @@ const SignInScreen = (props) => {
         </KeyboardAwareScrollView>
       </SafeAreaView>
     </LinearGradient>
-    )
-
-    
-}
+  );
+};
 
 export default SignInScreen;

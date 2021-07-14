@@ -1,33 +1,14 @@
 import { LinearGradient } from "expo-linear-gradient";
-import React, { useEffect, useState} from "react";
-import {
-  FlatList,
-  SafeAreaView,
-  View,
-  Text,
-} from "react-native";
-
+import React, { useEffect, useState, useContext } from "react";
+import { FlatList, SafeAreaView, View, Text } from "react-native";
+import taskContext from "../store/taskContext";
 
 const styles = require("../style/style");
 
-import { getClientTask } from "../api/authService";
-
-
-export default function TestScreen() {
-
-  
-  const [tasks, setTasks] = useState([]);
-
-  useEffect(() => {
-    const initTasks = async () => {
-      const res = await getClientTask();
-      console.log(res);
-      setTasks([...res.task]);
-    };
-    initTasks();
-  }, []);
-
-
+export default function TaskListScreen() {
+  const tasks = useContext(taskContext);
+  console.log(tasks);
+  const tasksArray = tasks.task;
 
   const Item = ({ title, done }) => {
     return (
@@ -38,26 +19,21 @@ export default function TestScreen() {
     );
   };
 
-
-
-  const renderItem = ({ item }) => (
+  const renderTasks = ({ item }) => (
     <Item title={item.title} done={"Done: " + item.done} />
   );
-
-
 
   return (
     <SafeAreaView style={styles.container}>
       <LinearGradient colors={["#4A148C", "#880E4F"]} style={styles.container}>
-      <FlatList
-        data={tasks}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
+        <View>
+          <FlatList
+            data={tasksArray}
+            renderItem={renderTasks}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
       </LinearGradient>
     </SafeAreaView>
   );
 }
-
-
-

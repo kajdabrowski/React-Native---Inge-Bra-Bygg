@@ -1,6 +1,6 @@
 import React from "react";
 import SignInScreen from "../screens/SignInScreen";
-import TestScreen from "../screens/TestScreen";
+
 import HomeScreen from "../screens/HomeScreen";
 import drawer from "./drawer"
 

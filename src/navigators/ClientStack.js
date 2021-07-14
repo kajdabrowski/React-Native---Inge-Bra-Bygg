@@ -1,6 +1,6 @@
 import TaskListScreen from "../screens/TaskListScreen";
-import TestScreen from "../screens/TestScreen";
-import MySwipable from "../screens/Swipable";
+
+
 import HomeScreen from "../screens/HomeScreen";
 import React from "react";
 import {clientDrawerStack} from "../navigators/clientDrawer";
@@ -16,7 +16,7 @@ const ClientStack = () => {
       <Stack.Screen name="Drawer" component={clientDrawerStack} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="TaskList" component={TaskListScreen} />
-      <Stack.Screen name="TestScreen" component={TestScreen} />
+     
       
     </Stack.Navigator>
   );

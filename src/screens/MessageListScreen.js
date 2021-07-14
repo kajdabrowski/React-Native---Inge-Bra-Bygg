@@ -22,7 +22,8 @@ export default function MessageListScreen() {
     const initMessages = async () =>{
       const response = await getMessage();
       console.log(response)
-      setMessages([...response.messages])
+      // setMessages([...response.messages])
+      setMessages(response.messages)
     }
     initMessages()
   },[])

@@ -1,38 +1,30 @@
 import React from "react";
 import { createContext, useState, useContext, useEffect } from "react";
-import { authService } from "../api/authService";
+import * as API from "../api/authService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-//Här ska vi importera async getTask funktionen från filen i api-mappen
+const TaskContext = React.createContext({});
 
-const TaskContext = createContext({});
-
-const TaskProvider = ({ children }) => {
+export const TaskProvider = ({ children }) => {
   const [taskData, setTaskData] = useState([]);
 
   useEffect(() => {
-    async function getTasks() {
-      const taskStorage = await AsyncStorage.getItem("@tasks");
-      if (taskStorage) {
-        setTaskData(Json.parse(taskStorage));
+    (async () => {
+      const tasks = await AsyncStorage.getItem("@Tasks");
+      if (!tasks) {
+        const response = await API.getClientTask();
+        console.log(response);
+        setTaskData(response);
+        await AsyncStorage.setItem("@Tasks", JSON.stringify(response));
+      } else {
+        setTaskData(JSON.parse(tasks));
       }
-    }
-    getTasks();
-  },[]);
+    })();
+  }, []);
 
   return (
-    <TaskContext.Provider value={{ taskData }}>
-        {children}
-    </TaskContext.Provider>
+    <TaskContext.Provider value={taskData}>{children}</TaskContext.Provider>
   );
 };
 
-function useTask(){
-    const context = useContext(TaskContext)
-    if(!context){
-        throw new Error("use task must be used within an task provider!!")
-    }
-    return context
-}
-
-export {useTask, TaskProvider, TaskContext}
+export default TaskContext;

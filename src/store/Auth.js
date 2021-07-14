@@ -20,7 +20,7 @@ import { authService } from "../api/authService";
 //and a empty object
 const AuthContext = createContext({});
 
-const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => {
   const [authData, setAuthData] = useState();
 
   //the AuthContext start with loading equals true
@@ -86,14 +86,16 @@ const AuthProvider = ({ children }) => {
 
 //A simple hooks to facilitate the access to the AuthContext
 // and permit components to subscribe to AuthContext updates
-function useAuth() {
-  const context = useContext(AuthContext);
+// function useAuth() {
+//   const context = useContext(AuthContext);
 
-  if (!context) {
-    throw new Error("useAuth must be used within an AuthProvider");
-  }
+//   if (!context) {
+//     throw new Error("useAuth must be used within an AuthProvider");
+//   }
 
-  return context;
-}
+//   return context;
+// }
 
-export { AuthContext, AuthProvider, useAuth };
+// export { AuthContext, AuthProvider, useAuth };
+
+export default AuthContext;
